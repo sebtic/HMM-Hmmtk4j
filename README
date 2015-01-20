@@ -1,0 +1,5 @@
+HMMTK4J is a set of Java classes to do various computation on Hidden Markov Models in Java.
+To achieve good performance in computation, a JNI implementation using ALTERnatives is used.
+
+Copyright Sébastien Aupetit <sebtic@projectsforge.org>
+
