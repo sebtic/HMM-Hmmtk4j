@@ -87,24 +87,6 @@
         </dependency>
       </dependencies>
     </profile>
-    <profile>
-      <id>macosx-amd64-support</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-        <os>
-          <name>mac os x</name>
-          <arch>i386</arch>
-        </os>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>org.projectsforge.hmmtk4j.benchmarks</groupId>
-          <artifactId>jni</artifactId>
-          <classifier>alternatives-amd64-macosx</classifier>
-          <version>${project.version}</version>
-        </dependency>
-      </dependencies>
-    </profile>
   </profiles>
 
   <dependencies>

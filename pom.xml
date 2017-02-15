@@ -1,121 +1,133 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.projectsforge</groupId>
-  <artifactId>hmmtk4j</artifactId>
-  <packaging>pom</packaging>
-  <version>1.1</version>
-  <name>HMMTK4J meta project</name>
-  <url>https://dev.projectsforge.org/projects/hmmtk4j</url>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.projectsforge</groupId>
+	<artifactId>hmmtk4j</artifactId>
+	<packaging>pom</packaging>
+	<version>1.1</version>
+	<name>HMMTK4J meta project</name>
+	<url>https://dev.projectsforge.org/projects/hmmtk4j</url>
 
-  <inceptionYear>2010</inceptionYear>
-  <developers>
-    <developer>
-      <id>sebtic</id>
-      <name>Sébastien Aupetit</name>
-      <email>sebtic@projectsforge.org</email>
-      <timezone>Europe/Paris</timezone>
-      <roles>
-        <role>architect</role>
-        <role>developer</role>
-      </roles>
-    </developer>
-  </developers>
+	<inceptionYear>2010</inceptionYear>
+	<developers>
+		<developer>
+			<id>sebtic</id>
+			<name>Sébastien Aupetit</name>
+			<email>sebtic@projectsforge.org</email>
+			<timezone>Europe/Paris</timezone>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
 
-  <issueManagement>
-    <system>redmine</system>
-    <url>https://dev.projectsforge.org/projects/hmmtk4j</url>
-  </issueManagement>
+	<issueManagement>
+		<system>gitlab</system>
+		<url>https://gitlab.projectsforge.org/hmm/hmmtk4j/issues</url>
+	</issueManagement>
 
-  <scm>
-    <connection>scm:git:https://github.com/user/project.git</connection>
-    <url>https://scm.projectsforge.org/scm/git/org.projectsforge.alternatives</url>
-    <developerConnection>scm:git:https://scm.projectsforge.org/scm/git/org.projectsforge.hmmtk4j</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
+	<scm>
+		<connection>scm:git:ssh://git@gitlab.projectsforge.org:2222/hmm/hmmtk4j.git</connection>
+		<url>https://gitlab.projectsforge.org/hmm/hmmtk4j</url>
+		<developerConnection>scm:git:ssh://git@gitlab.projectsforge.org:2222/hmm/hmmtk4j.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
-  <licenses>
-    <license>
-      <name>GPLv3</name>
-      <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
-      <distribution>manual</distribution>
-      <comments>GNU General Public License</comments>
-    </license>
-  </licenses>
+	<licenses>
+		<license>
+			<name>GPLv3</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+			<distribution>manual</distribution>
+			<comments>GNU General Public License</comments>
+		</license>
+	</licenses>
 
-  <repositories>
-    <repository>
-      <id>projectsforge-repository</id>
-      <name>Projecsforge.org Public Maven repository</name>
-      <url>https://nexus.projectsforge.org/nexus/content/groups/public/</url>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-  </repositories>
+	<repositories>
+		<repository>
+			<id>projectsforge-repository</id>
+			<name>Projecsforge.org Public Maven repository</name>
+			<url>https://static.projectsforge.org/maven/</url>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
 
-  <distributionManagement>
-    <repository>
-      <id>projectsforge-public-releases</id>
-      <url>https://nexus.projectsforge.org/nexus/content/repositories/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>projecsforge-public-snapshots</id>
-      <url>https://nexus.projectsforge.org/nexus/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
 
-  <profiles>
-    <profile>
-      <id>alldeps-support</id>
-      <modules>
-        <module>core.alldeps</module>
-        <module>discretehmm.alldeps</module>
-        <module>dmdhmm.alldeps</module>
-      </modules>
-    </profile>
-    <profile>
-      <id>doxygen-support</id>
-      <modules>
-        <module>packagers.doxygen</module>
-      </modules>
-    </profile>
-    <profile>
-      <id>benchmarks</id>
-      <modules>
-        <module>benchmarks.jni-classes</module>
-        <module>benchmarks.jni</module>
-        <module>benchmarks.java</module>
-      </modules>
-    </profile>
-  </profiles>
+	<distributionManagement>
+		<repository>
+			<id>ssh-repository</id>
+			<url>sftp://maven@static.projectsforge.org:2223/maven/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ssh-repository</id>
+			<url>sftp://maven@static.projectsforge.org:2223/maven/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
-  <modules>
-    <module>javabuilder</module>
-    <module>nativebuilder</module>
+	<profiles>
+		<profile>
+			<id>alldeps-support</id>
+			<modules>
+				<module>core.alldeps</module>
+				<module>discretehmm.alldeps</module>
+				<module>dmdhmm.alldeps</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>doxygen-support</id>
+			<modules>
+				<module>packagers.doxygen</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>benchmarks</id>
+			<modules>
+				<module>benchmarks.jni-classes</module>
+				<module>benchmarks.jni</module>
+				<module>benchmarks.java</module>
+			</modules>
+		</profile>
+	</profiles>
 
-    <module>core.basicnative</module>
-    <module>core.jnisupport</module>
-    <module>core.jni-classes</module>
-    <module>core.jni</module>
-    <module>core.java</module>
+	<modules>
+		<module>javabuilder</module>
+		<module>nativebuilder</module>
 
-    <module>trainers.java</module>
+		<module>core.basicnative</module>
+		<module>core.jnisupport</module>
+		<module>core.jni-classes</module>
+		<module>core.jni</module>
+		<module>core.java</module>
 
-    <module>discretehmm.basicnative</module>
-    <module>discretehmm.jnisupport</module>
-    <module>discretehmm.jni-classes</module>
-    <module>discretehmm.jni</module>
-    <module>discretehmm.java</module>
+		<module>trainers.java</module>
 
-    <module>dmdhmm.basicnative</module>
-    <module>dmdhmm.jnisupport</module>
-    <module>dmdhmm.jni-classes</module>
-    <module>dmdhmm.jni</module>
-    <module>dmdhmm.java</module>
+		<module>discretehmm.basicnative</module>
+		<module>discretehmm.jnisupport</module>
+		<module>discretehmm.jni-classes</module>
+		<module>discretehmm.jni</module>
+		<module>discretehmm.java</module>
 
-    <module>packagers.jar</module>
-    <module>packagers.javadoc</module>
+		<module>dmdhmm.basicnative</module>
+		<module>dmdhmm.jnisupport</module>
+		<module>dmdhmm.jni-classes</module>
+		<module>dmdhmm.jni</module>
+		<module>dmdhmm.java</module>
 
-  </modules>
+		<module>packagers.jar</module>
+		<module>packagers.javadoc</module>
+
+	</modules>
+
+	<build>
+		<extensions>
+			<!-- Enabling the use of SSH -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.6</version>
+			</extension>
+		</extensions>
+	</build>
 </project>
